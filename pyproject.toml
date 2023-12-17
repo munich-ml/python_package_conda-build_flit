@@ -1,0 +1,17 @@
+[build-system]
+requires = ["flit-core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "trial_p"
+version = "2023.1"
+description = "Simple project to try packaging and deployment on anaconda.org"
+dependencies = [
+    "requests<2.30"
+]
+
+[project.scripts]
+trial_p = "trial_p:main"
+# This makes an executable script. 
+# Typing "trial_p" in cmd will execute the main function in the trial_p package.
+# That requires that a main() function is defined in __init__.py

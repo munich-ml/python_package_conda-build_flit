@@ -1,0 +1,29 @@
+{% set data = load_file_data("pyproject.toml") %}
+
+package:
+  name: trial_p
+  version: {{ data["project"]["version"] }}
+
+source:
+  path: .
+
+build:
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed -vv .
+  noarch: python
+  entry_points:
+    {% for name, ep in data.get("project", {}).get("scripts", {}).items() %}
+    - {{ name }} = {{ ep }}
+    {% endfor %}
+
+requirements:
+  host:
+    - python
+    - pip
+    {% for dep in data["build-system"]["requires"] %}
+    - {{ dep.lower() }}
+    {% endfor %}
+  run:
+    - python
+    {% for dep in data.get("project", {}).get("dependencies", {}) %}
+    - {{ dep.lower() }}
+    {% endfor %}
