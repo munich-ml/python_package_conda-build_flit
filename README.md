@@ -2,7 +2,12 @@
 This tutorial demonstrates how to create an __installable python package__ from regular python source code.
 
 ### Useful link
-- [Anaconda: Uploading and installing conda packages](https://docs.anaconda.com/free/anacondaorg/user-guide/packages/conda-packages/)
+- [Conda-build](https://docs.conda.io/projects/conda-build/en/stable/resources/define-metadata.html)
+- [Flit](https://flit.pypa.io/en/latest/)
+- [Configuring setuptools using pyproject.toml files](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html)
+- PEP 621: [Storing project metadata in pyproject.toml](https://peps.python.org/pep-0621/) 
+- Anaconda: [Uploading and installing conda packages](https://docs.anaconda.com/free/anacondaorg/user-guide/packages/conda-packages/)
+- Demo video packaging with pip: [Packaging python code with pyproject.toml](https://youtu.be/v6tALyc4C10?si=D60Lz81g5KG_ZXNY)
 
 # 1. Package build process
 ## Packaging environemt
